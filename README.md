@@ -1,42 +1,45 @@
-# Scrabble Score Checker
+# Pig Dice
 
-#### A program that allows users to input a word and determine its raw Scrabble score, assuming no special tiles. 6/1/17
+#### A program where two users can play Pig dice against each other. 1/29/20
 
-#### By **Marilyn Carlin and David Wilson**
+#### By **Dana Luukko and Stephanie Podolak**
 
 ## Description
 
-A website created with C# and HTML where a user can submit a word and determine its raw Scrabble score.
+A program where two users can play Pig dice against each other.
+
+* Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
+* If the player rolls a 1, they score nothing and it becomes the next player's turn.
+* If the player rolls any other number, it is added to their turn total and the player's turn continues.
+* If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
+
 
 
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Homepage** | User accesses localhost:5004 | Homepage with user input form |
-| **Program Gathers User Input** | User input: "pants" | Output: "pants" |
-| **Program Removes Spaces from User Input**| User Input: "pants pants" | Output: "pantspants" |
-| **Program Removes Punctuation from User Input**| Input: "p#an^t@s  /p(ant%s" | Output: "pantspants" |
-| **Program Assigns Characters Numeric Values** | Input: "pants" | Output: "3 1 1 1 1" |
-| **Program Sums Character Values**| Input: "3 1 1 1 1" | Page Displays: 7 |
+| **Roll Dice** | Click "Roll" button| integer value between 1-6 |
+| **Case: Roll 1** | Click "Roll" and result is 1| Play ends. Play score = 0|
+| **Player holds** | Click "Hold" | Play ends. Play score is added to total score.|
+| **Case: Total score = 100** | Click "Roll Dice" button and value of play score results in total score = 100| Play ends. Game ends. Player wins.|
+| **Roll Dice** | Click "Roll Dice" button| integer value between 1-6 |
+
 
 ## Setup/Installation Requirements
 
-1. To run this program, you must have a C# compiler. I use [Mono](http://www.mono-project.com).
-2. Install the [Nancy](http://nancyfx.org/) framework to use the view engine. Follow the link for installation instructions.
-3. Clone this repository.
-4. Open the command line--I use PowerShell--and navigate into the repository. Use the command "dnx kestrel" to start the server.
-5. On your browser, navigate to "localhost:5004" and enjoy!
+1. Clone this repository to your desktop. If using Git Bash you can do this by typing "git clone _________" into your command line while in desktop directory.
+2. Navigate inside project directory by entering "cd pig-dice" in Git Bash.
+3. Open index.html file in your browser of choice by entering "open index.html".
 
 ## Known Bugs
 * No known bugs at this time.
 
 ## Technologies Used
-* C#
-  * Nancy framework
-  * Razor View Engine
-  * ASP.NET Kestrel HTTP server
-  * xUnit
-
+* JavaScript
+* jQuery-3.4.1
+* HTML
+* CSS
+* Bootstrap-4.4.1
 * HTML
 
 ## Support and contact details
@@ -47,4 +50,4 @@ _Email no one with any questions, comments, or concerns._
 
 *{This software is licensed under the MIT license}*
 
-Copyright (c) 2017 **_{Marilyn Carlin, David Wilson}_**
+Copyright (c) 2017 **_{Dana Luukko, Stephanie "Honey Pockets" Podolak}_**
