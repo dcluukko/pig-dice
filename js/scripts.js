@@ -9,6 +9,11 @@ Roster.prototype.addPlayer = function(player) {
 	player.id = (this.playerId += 1);
 	this.players.push(player);
 }
+
+function checkPlayerId(player)	{
+	return (this.playerId ? 1 : 2 )
+}
+
 //Player Score Logic
 function Player(name, rollScore, playScore, totalScore) {
 	this.name = name,
@@ -26,7 +31,6 @@ Player.prototype.addToScore = function(player) {
 }
 
 Player.prototype.addToPlayScore = function(rollScore) {
-	console.log(this.playScore)
 	this.playScore += rollScore;
 	return this.playScore;
 }
@@ -66,10 +70,14 @@ $("document").ready(function() {
 
 	$("form#input-name").submit(function()	{
 		event.preventDefault();
-		var inputtedName = $("input#name").val();
-		var player = new Player(inputtedName);
-		console.log(player);
-		roster.addPlayer(player);
+		var playerOneName = $("input#player-one-name").val();
+		var playerTwoName = $("input#player-two-name").val();
+		var playerOne = new Player(playerOneName);
+		var playerTwo = new Player(playerTwoName);
+		roster.addPlayer(playerOne);
+		roster.addPlayer(playerTwo);
+		console.log(roster.players[1])
+		
 	});
 	
 	$("form#roll").submit(function() {
@@ -85,7 +93,7 @@ $("document").ready(function() {
 		event.preventDefault();
 		var totalScore = roster.players[0].addToTotalScore(roster.players[0].playScore);
 		showHold(totalScore);
-		console.log(roster.players[0].playScore);
+		// console.log(roster.players[0].playScore);
 	})
 
 });
