@@ -4,7 +4,7 @@
 <head>
   <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
-  <script src="js/jquery-1.12.0.js"></script>
+  <script src="js/jquery-3.4.1.js"></script>
   <script src="js/scripts.js"></script>
   <title>Document</title>
 </head>
@@ -12,9 +12,30 @@
 <body>
   <div class="container">
     <div class="jumbotron">
-      <h1></h1>
+      <h1>Pig Dice</h1>
     </div>
-
+    <div class="row">
+      <div class="col-md-4">
+        <form id="input-name">
+          <label for="name">Enter Player Name</label>
+          <input id="name" class="form-control" type="text">
+          <button type="submit" class="name-input" id="button-name">Enter</button>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <form id="roll">
+            <p>Roll Result: <span id="roll-dice-result"></span></p>
+            <button type="submit" class="roll-dice" id="button-roll">Roll Dice </button>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <form id="hold">
+          <p>Game Score: <span id="game-score"></span></p>
+          <p>Play Score: <span id="play-score"></span></p>
+          <button type="submit" class="hold" id="button-hold">Hold</button>
+        </form>
+      </div>
+    </div>
   </div>
 </body>
 
