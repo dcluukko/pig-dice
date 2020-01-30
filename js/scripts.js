@@ -1,7 +1,7 @@
 //Roster Logic
 
 function Roster() {
-	this.players = []
+	this.players = [],
   this.playerId = 0 
 }
 
@@ -10,9 +10,9 @@ Roster.prototype.addPlayer = function(player) {
 	this.players.push(player);
 }
 
-function checkPlayerId(player)	{
-	return (this.playerId ? 1 : 2 )
-}
+Player.prototype.checkPlayerID = function()	{
+	return (this.id === 1 ? true : false )
+;}
 
 //Player Score Logic
 function Player(name, rollScore, playScore, totalScore) {
@@ -21,7 +21,7 @@ function Player(name, rollScore, playScore, totalScore) {
 	this.playScore = playScore,
 	this.totalScore = totalScore
 
-	
+	this.rollScore = 0;
 	this.playScore = 0;
 	this.totalScore = 0;
 }
@@ -30,9 +30,14 @@ Player.prototype.addToScore = function(player) {
 	this.totalScore += this.playScore;
 }
 
-Player.prototype.addToPlayScore = function(rollScore) {
-	this.playScore += rollScore;
-	return this.playScore;
+Player.prototype.addToPlayScore = function(player) {
+	console.log(player);
+	if (this.rollScore === 0) {
+		return this.playScore = 0;
+	} else {
+		this.playScore += this.rollScore;
+		return this.playScore;
+	}
 }
 
 
@@ -44,8 +49,13 @@ Player.prototype.addToTotalScore = function(playScore) {
 
 function diceRoll() {
 	var rollScore = Math.floor((Math.random() * 6) + 1);
-	return rollScore;
+		if (rollScore === 1) {
+			return rollScore = 0;
+		} 
+		console.log(rollScore);
+		return rollScore;
 };
+
 
 
 
@@ -62,7 +72,7 @@ function showRoll(rollScore)	{
 };
 
 function showHold(totalScore) {
-$("#game-score").text(roster.players[0].totalScore);
+$("#player-one-total-score").text(roster.players[0].totalScore);
 }
 
 
@@ -76,22 +86,25 @@ $("document").ready(function() {
 		var playerTwo = new Player(playerTwoName);
 		roster.addPlayer(playerOne);
 		roster.addPlayer(playerTwo);
-		console.log(roster.players[1])
+		var currentPlayer = roster.players[1];
+		console.log(currentPlayer);
+		var whatisthis = currentPlayer.checkPlayerID();
+	
 		
 	});
 	
 	$("form#roll").submit(function() {
 		event.preventDefault();
 		var rollScore = diceRoll();
-		roster.players[0].addToPlayScore(rollScore);
 		showRoll(rollScore);
-		console.log(roster.players[0]);
-
+		roster.players[0].addToPlayScore(roster.players[0]);
+		
 	});
 
 	$("form#hold").submit(function()	{
 		event.preventDefault();
 		var totalScore = roster.players[0].addToTotalScore(roster.players[0].playScore);
+		currentPlayer = player.checkPlayerID();
 		showHold(totalScore);
 		// console.log(roster.players[0].playScore);
 	})
