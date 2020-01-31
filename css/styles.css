@@ -1,0 +1,18 @@
+.container {
+    font-family: 'Sigmar One', cursive;
+}
+
+.jumbotron {
+    background: pink;
+    text-align: center;
+}
+
+
+.scoreboard {
+    display: none; 
+    background-color: rgb(233, 126, 126);
+}
+
+#playboard {
+    background-color: rgb(223, 209, 212);
+}

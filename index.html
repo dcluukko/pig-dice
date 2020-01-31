@@ -4,6 +4,7 @@
 <head>
   <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Sigmar+One&display=swap" rel="stylesheet">
   <script src="js/jquery-3.4.1.js"></script>
   <script src="js/scripts.js"></script>
   <title>Document</title>
@@ -15,30 +16,38 @@
       <h1>Pig Dice</h1>
     </div>
     <div class="row">
-      <div class="col-md-4">
-        <form id="input-name">
-          <label for="name">Enter First Player Name</label>
-          <input id="player-one-name" class="form-control" type="text">
-          <br>
-          <label for="name">Enter Second Player Name</label>
-          <input id="player-two-name" class="form-control" type="text">
-          <br>
-          <button type="submit" class="name-input" id="button-name">Enter</button>
-        </form>
+      <div class="col-md-12">
+        <div class="name-input-form">
+          <form id="input-name">
+            <label for="name">Enter First Player Name</label>
+            <input id="player-one-name" class="form-control" type="text">
+            <br>
+            <label for="name">Enter Second Player Name</label>
+            <input id="player-two-name" class="form-control" type="text">
+            <br>
+            <button type="submit" class="name-input" id="button-name">Enter</button>
+          </form>
+        </div>
       </div>
-      <div class="col-md-4">
-        <form id="roll">
-            <p>Roll Result: <span id="roll-dice-result"></span></p>
-            <button type="submit" class="roll-dice" id="button-roll">Roll Dice </button>
-        </form>
-      </div>
-      <div class="col-md-4">
-        <form id="hold">
-          <p>Play Score: <span id="play-score"></span></p>
-          <p>Player 1 Total Score: <span id="player-one-total-score"></span></p>
-          <p>Player 2 Total Score: <span id="player-one-total-score"></span></p>
-          <button type="submit" class="hold" id="button-hold">Hold</button>
-        </form>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="scoreboard" id ="playboard">
+          <form id="roll">
+              <p>Roll Result: <span id="roll-dice-result"></span></p>
+              <p>Play Score: <span id="play-score"></span></p>
+              <button type="submit" class="roll-dice" id="button-roll">Roll Dice </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="scoreboard">
+            <form id="hold">
+              <p><span id="player-one-name-scoreboard"></span> Total Score: <span id="player-one-total-score"></span></p>
+              <p><span id="player-two-name-scoreboard"></span> Total Score: <span id="player-two-total-score"></span></p>
+              <button type="submit" class="hold" id="button-hold">Hold</button>
+          </form>
+         </div> 
       </div>
     </div>
   </div>
