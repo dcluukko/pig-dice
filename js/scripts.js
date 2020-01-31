@@ -128,7 +128,5 @@ $("document").ready(function() {
 		showHold(totalScore);
 		switchPlayer();
 		showRoll();
-		
 	})
-
 });
